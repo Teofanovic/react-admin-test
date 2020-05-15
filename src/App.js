@@ -4,6 +4,8 @@ import jsonServerProvider from "ra-data-json-server";
 import React from "react";
 import { Admin, Resource } from "react-admin";
 
+import authProvider from "./authProvider";
+import { Dashboard } from "./components/Dashboard";
 import { PostCreate } from "./components/PostCreate";
 import { PostEdit } from "./components/PostEdit";
 import { PostList } from "./components/PostList";
@@ -11,7 +13,11 @@ import { UserList } from "./components/UserList";
 
 const dataProvider = jsonServerProvider("https://jsonplaceholder.typicode.com");
 const App = () => (
-  <Admin dataProvider={dataProvider}>
+  <Admin
+    dashboard={Dashboard}
+    dataProvider={dataProvider}
+    authProvider={authProvider}
+  >
     <Resource
       name="posts"
       list={PostList}
