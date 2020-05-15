@@ -1,5 +1,5 @@
 import React from "react";
-import { Datagrid, EmailField, List, TextField, UrlField } from "react-admin";
+import { Datagrid, EmailField, List, TextField } from "react-admin";
 
 import CustomUrlField from "./CustomUrlField";
 
